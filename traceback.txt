@@ -1,24 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 27, in script
-    e "You've created a new Ren'Py game."
-Exception: Sayer 'e' is not defined.
+After initialization, but before game start.
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+SyntaxError: unexpected EOF while parsing (game/screens.rpy, line 189)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 27, in script
-    e "You've created a new Ren'Py game."
-  File "D:\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 2573, in execute
-    Say.execute(self)
-  File "D:\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "D:\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'e' is not defined.
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\main.py", line 75, in run
+    renpy.translation.init_translation()
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 702, in init_translation
+    renpy.store._init_language() # type: ignore
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 796, in change_language
+    new_change_language(tl, language)
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 748, in new_change_language
+    i.apply()
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 2800, in apply
+    value = renpy.python.py_eval(expr)
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "D:\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: unexpected EOF while parsing (game/screens.rpy, line 189)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
 Online Dating Simulator 1.0
-Sat Sep 21 22:16:51 2024
+Sun Oct  6 15:14:51 2024

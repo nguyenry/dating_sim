@@ -116,6 +116,23 @@ screen say(who, what):
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
+screen multiple_say(who, what, multiple):
+    if multiple[0] == 1:
+        style_prefix "say"
+    elif multiple[1] == 2:
+        style_prefix "multiple_say"
+    # add "gui/chatbg.png"
+    window:
+        side ("r"):
+            area(1, 1, 300, 500)
+            viewport id "DialogueBox":
+                yinitial 1.0
+                draggable False mousewheel True pagekeys True
+                vbox:
+                    if who is not None:
+                        text who + "\n" id "who" size 22 color "#e9e9e9"
+                    text what id "what" size 18 color "#e9e9e9"
+        
 
 ## Make the namebox available for styling through the Character object.
 init python:
@@ -135,22 +152,34 @@ style window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
+    yoffset -10
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
+style multiple2_say_window:
+    xpos 10
+    ypos 270
+    background "gui/textbox.png"
+    xpadding 30
+    ypadding 30
+    xfill True
+
 style namebox:
-    xpos gui.name_xpos
+    xpos gui.name_xpos - 200
     xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-    ysize gui.namebox_height
+    # xsize gui.namebox_width
+    xsize 600
+    ypos gui.name_ypos - 35
+    # ysize gui.namebox_height
+    ysize 72
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
+    # xalign gui.name_xalign
+    xalign 0.5
     yalign 0.5
 
 style say_dialogue:
@@ -158,7 +187,7 @@ style say_dialogue:
 
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
+    ypos gui.dialogue_ypos - 25
 
     adjust_spacing False
 
@@ -248,6 +277,7 @@ screen quick_menu():
 
             xalign 0.5
             yalign 1.0
+            yoffset -15
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
