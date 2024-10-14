@@ -203,9 +203,12 @@ style say_dialogue:
 
 screen input(prompt):
     style_prefix "input"
-
+    
     window:
-
+        if prompt[0]:
+            window:
+                style "namebox"
+                text "Al" style "namebox_label"
         vbox:
             xanchor gui.dialogue_text_xalign
             xpos gui.dialogue_xpos
@@ -225,6 +228,15 @@ style input:
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
 
+    # xpos gui.name_xpos - 200
+    # xanchor gui.name_xalign
+    # xsize 600
+    # ypos gui.name_ypos - 35
+    # ysize 72
+
+    # background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    # padding gui.namebox_borders.padding
+
 
 ## Choice screen ###############################################################
 ##
@@ -236,6 +248,11 @@ style input:
 
 screen choice(items):
     style_prefix "choice"
+
+    window:
+        ypos 757
+        style "namebox"
+        text "Al" style "namebox_label"
 
     vbox:
         for i in items:
@@ -283,9 +300,9 @@ screen quick_menu():
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
+            # textbutton _("Save") action ShowMenu('save')
+            # textbutton _("Q.Save") action QuickSave()
+            # textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
 
 
