@@ -48,7 +48,7 @@ label start:
 
     # $ povname = renpy.input("What is your name?", length=15, exclude=" 0123456789+=,.?!<>{}[]").strip() or "Admin"
     python:
-        povname = renpy.input("What is your name?", length=32)
+        povname = renpy.input("What is your name? Type here.", length=32)
         povname = povname.strip()
 
         if not povname:
