@@ -23,6 +23,7 @@ define m = Character("[povname]")
 # Movies
 image main_menu_mov = Movie(play="gui/main_menu.webm")
 image sakura_mov = Movie(play="images/sakura_short.webm")
+image puke_mov = Movie(play="images/puke.webm")
 
 # The game starts here.
 
@@ -32,10 +33,10 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene main_menu_mov
-    with fade
+    # scene main_menu_mov
+    # with fade
 
-    "\"AI is something that is kind of present in your profile always and makes suggestions to you.\" - CEO of Grindr"
+    # "\"AI is something that is kind of present in your profile always and makes suggestions to you.\" - CEO of Grindr"
 
     scene classroom
     with fade
@@ -70,17 +71,24 @@ label start:
             jump hair
 
     label hair:
-        m "No, you don't understand shit. I have a life. You are just a game."
+        # show puke_mov
+        $ renpy.movie_cutscene("images/puke.webm")
 
-    scene classroom_invert
+    a "Cue some explanation of why that is bad."
 
-    show ai scary at center, size_normal
+    a "Cue contact information input form."
 
-    a "What?"
+    a "Cue paywall."
 
-    m "Fuck, please, just let me leave."
+    # scene classroom_invert
 
-    a "I really thought you'd be different from the rest, but I guess humans are all the same."
+    # show ai scary at center, size_normal
+
+    # a "What?"
+
+    # m "Fuck, please, just let me leave."
+
+    # a "I really thought you'd be different from the rest, but I guess humans are all the same."
 
     # This ends the game.
 
