@@ -62,23 +62,100 @@ label start:
         "What is your hair color?"
 
         "Black":
-            jump hair
+            jump puke
         "Brown":
-            jump hair
+            jump puke
         "Blonde":
-            jump hair
+            jump puke
         "Gray":
-            jump hair
+            jump puke
 
-    label hair:
+    label puke:
         # show puke_mov
         $ renpy.movie_cutscene("images/puke.webm")
 
     a "Cue some explanation of why that is bad."
 
+
+    menu:
+        "What is your body type?"
+
+        "Twink":
+            jump hairless
+        "Twunk":
+            jump hairless
+        "Dolphin":
+            jump hairless
+        "Otter":
+            jump hairy
+        "Bear":
+            jump hairy
+
+    label hairless:
+        menu:
+            "How often do you shave?"
+
+            "Daily":
+                a "Okok, that's a good amount."
+                jump young
+            "Weekly":
+                a "Ew, what the fuck is there shit stringing on your ass hairs?"
+                jump young
+            "Monthly":
+                $ renpy.movie_cutscene("images/puke.webm")
+                jump young
+            "Never":
+                $ renpy.movie_cutscene("images/puke.webm")
+                jump young
+    
+    label hairy:
+        menu:
+            "How hairy are you?"
+
+            "Very":
+                a "Perfect, the twinks are gonna love you."
+                jump old
+            "Not really":
+                a "Oof, you're just a fem twink bottom bitch, then."
+                $ renpy.movie_cutscene("images/puke.webm")
+                jump old
+
+    label young:
+        menu:
+            "How old are you?"
+
+            "18-24":
+                a "Okok, legal, chill."
+                jump size
+            "25+":
+                a "Get the fuck outta here, hag!"
+                $ renpy.movie_cutscene("images/puke.webm")
+                jump size
+
+    label old:
+        menu:
+            "How old are you?"
+
+            "50+":
+                a "Those daddy issue twinks are gonna love you..."
+                jump size
+            "< 50":
+                $ renpy.movie_cutscene("images/puke.webm")
+                jump size
+
+    label size:
+        menu:
+            "How big are you?"
+
+            "1 foot":
+                a "Get those size queens, daddy!"
+            "< 1 foot":
+                a "Ooo, sorry, guess you're a bottom. Slay!"
+    
     a "Cue contact information input form."
 
     a "Cue paywall."
+
 
     # scene classroom_invert
 

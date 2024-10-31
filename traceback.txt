@@ -1,60 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 50, in script
-    python:
-  File "game/script.rpy", line 51, in <module>
-    povname = renpy.input("What is your name?", length=32)
-Exception: Style '' does not exist.
+  File "game/script.rpy", line 120, in script
+    jump old
+ScriptError: could not find label 'old'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 50, in script
-    python:
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 51, in <module>
-    povname = renpy.input("What is your name?", length=32)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/exports/inputexports.py", line 177, in input
-    rv = renpy.ui.interact(mouse='prompt', type="input", roll_forward=roll_forward)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/screen.py", line 485, in visit_all
-    self.child.visit_all(callback, seen=None)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/displayable.py", line 436, in visit_all
-    callback(self)
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/display/core.py", line 2745, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Volumes/renpy-8.3.2-sdk/renpy-8.3.2-sdk/renpy/text/text.py", line 2161, in per_interact
-    if self.style.slow_abortable:
-  File "gen3-static/styleclass.pxi", line 613, in renpy.styledata.styleclass.Style.slow_abortable.__get__
-  File "style.pyx", line 493, in renpy.style.StyleCore._get
-  File "style.pyx", line 686, in renpy.style.build_style
-  File "style.pyx", line 142, in renpy.style.get_full_style
-  File "style.pyx", line 83, in renpy.style.get_style
-Exception: Style '' does not exist.
+  File "game/script.rpy", line 120, in script
+    jump old
+  File "/Applications/renpy-8.3.2-sdk/renpy/ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Applications/renpy-8.3.2-sdk/renpy/script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'old'.
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.3.2.24090902
 My Romance Academia 1.0
-Mon Oct 14 14:34:50 2024
+Thu Oct 31 00:01:06 2024
