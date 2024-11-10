@@ -19,6 +19,7 @@ transform size_far:
 
 define a = Character("Al")
 define m = Character("[povname]")
+define choosed_char = "None"
 
 # Movies
 image main_menu_mov = Movie(play="gui/main_menu.webm")
@@ -38,18 +39,21 @@ label start:
 
     # "\"AI is something that is kind of present in your profile always and makes suggestions to you.\" - CEO of Grindr"
 
-    scene classroom
-    with fade
+    call screen character_choose
 
-    show ai happy at center, size_normal
+    label init:
+        scene classroom
+        with fade
+
+        image char = "images/[choosed_char].png"
+        show char at center, size_normal
 
     a "Welcome to My Romance Academia!"
 
-    a "I will be your AI assistant as we curate your profile to maximize your chances on the dating scene! First, what is your name?"
+    a "I will be your AI assistant as we curate your profile to maximize your chances on the dating scene!"
 
-    # $ povname = renpy.input("What is your name?", length=15, exclude=" 0123456789+=,.?!<>{}[]").strip() or "Admin"
     python:
-        povname = renpy.input("What is your name? Type here.", length=32)
+        povname = renpy.input("First, what is your name? Type here.", length=32)
         povname = povname.strip()
 
         if not povname:
