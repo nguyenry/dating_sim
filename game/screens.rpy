@@ -27,11 +27,12 @@ style gui_text:
 
 style button:
     properties gui.button_properties("button")
+    activate_sound "audio/bubble click.ogg"
 
 style button_text is gui_text:
     properties gui.text_properties("button")
     yalign 0.5
-
+    activate_sound "audio/bubble click.ogg"
 
 style label_text is gui_text:
     properties gui.text_properties("label", accent=True)
@@ -272,9 +273,11 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    activate_sound "audio/bubble click.ogg"
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
+    activate_sound "audio/bubble click.ogg"
 
 
 ## Quick Menu screen ###########################################################
@@ -344,7 +347,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start() activate_sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
 
         else:
 

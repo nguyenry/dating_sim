@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 50: expected 'image_name_component' not found.
-    show [choosed_char]
-         ^
+File "game/screens.rpy", line 351: 'activate_sound' is not a keyword argument or valid child of the vbox statement.
+    activate_sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Nov  9 16:03:53 2024
+Sun Nov 10 15:18:00 2024

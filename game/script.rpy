@@ -21,10 +21,15 @@ define a = Character("Al")
 define m = Character("[povname]")
 define choosed_char = "None"
 
+# Images
+image char_select = "images/characters/character_select_screen.png"
+
 # Movies
 image main_menu_mov = Movie(play="gui/main_menu.webm")
 image sakura_mov = Movie(play="images/sakura_short.webm")
 image puke_mov = Movie(play="images/puke.webm")
+
+# Audio
 
 # The game starts here.
 
@@ -39,9 +44,19 @@ label start:
 
     # "\"AI is something that is kind of present in your profile always and makes suggestions to you.\" - CEO of Grindr"
 
+    init python:
+        renpy.music.register_channel("background", "music")
+    play background "audio/romantic - yu yu hakusho.ogg"
+
+    scene char_select
+    with fade
+    
+    "Select an AI assistant to help you create your perfect you by clicking on them."
+
     call screen character_choose
 
     label init:
+        play sound "audio/bubble click.ogg"
         scene classroom
         with fade
 
@@ -53,7 +68,7 @@ label start:
     a "I will be your AI assistant as we curate your profile to maximize your chances on the dating scene!"
 
     python:
-        povname = renpy.input("First, what is your name? Type here.", length=32)
+        povname = renpy.input("First, what is your name? Type and press Enter/Return.", length=32)
         povname = povname.strip()
 
         if not povname:
