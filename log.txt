@@ -1,4 +1,4 @@
-2024-11-10 23:34:16 UTC
+2024-11-11 09:16:04 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.2.24090902
 
@@ -31,7 +31,7 @@ Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.04s
+Interface start took 0.07s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3840, 2160)
@@ -42,4 +42,6 @@ Renderer: b'NVIDIA GeForce GTX 1060 6GB/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 561.09'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(3658, 2058) drawable=(3658, 2058)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3840, 2115) drawable=(3840, 2115)
 Maximum texture size: 4096x4096

@@ -27,7 +27,7 @@ image char_select = "images/characters/character_select_screen.png"
 # Movies
 image main_menu_mov = Movie(play="gui/main_menu.webm")
 image sakura_mov = Movie(play="images/sakura_short.webm")
-image puke_mov = Movie(play="images/puke.webm")
+image sakura_scary = Movie(play="images/sakura_scary.webm")
 
 # Audio
 
@@ -44,6 +44,8 @@ label start:
 
     # "\"AI is something that is kind of present in your profile always and makes suggestions to you.\" - CEO of Grindr"
 
+    # call screen contact_info
+
     init python:
         renpy.music.register_channel("background", "music")
     play background "audio/romantic - yu yu hakusho.ogg"
@@ -51,7 +53,7 @@ label start:
     scene char_select
     with fade
     
-    "Select an AI assistant to help you create your perfect you by clicking on them."
+    "Select an AI assistant to help you create the perfect you by clicking on them.{p=2.0}{nw}"
 
     call screen character_choose
 
@@ -68,7 +70,7 @@ label start:
     a "I will be your AI assistant as we curate your profile to maximize your chances on the dating scene!"
 
     python:
-        povname = renpy.input("First, what is your name? Type and press Enter/Return.", length=32)
+        povname = renpy.input("First, what is your name? Start typing and then press Enter/Return.", length=32)
         povname = povname.strip()
 
         if not povname:
@@ -90,7 +92,6 @@ label start:
             jump puke
 
     label puke:
-        # show puke_mov
         $ renpy.movie_cutscene("images/puke.webm")
 
     a "Cue some explanation of why that is bad."
@@ -171,20 +172,54 @@ label start:
             "< 1 foot":
                 a "Ooo, sorry, guess you're a bottom. Slay!"
     
-    a "Cue contact information input form."
+    scene sakura_scary
+    with pixellate
+    show char at center, size_normal
 
-    a "Cue paywall."
+    a "Thank you for participating in our survey!"
 
+    a "We now have enough data to create the perfect you! But first, we need you to provide the following information:"
 
-    # scene classroom_invert
+    python:
+        legalName = renpy.input("Full Legal Name (First MI Last):", length=64)
+        legalName = legalName.strip()
 
-    # show ai scary at center, size_normal
+        if not legalName:
+            legalName = "Admin"
 
-    # a "What?"
+    python:
+        email = renpy.input("Email:", length=256)
+        email = email.strip()
 
-    # m "Fuck, please, just let me leave."
+        if not email:
+            email = "disgusting@loser.com"
 
-    # a "I really thought you'd be different from the rest, but I guess humans are all the same."
+    python:
+        address = renpy.input("Residential Address:", length=256)
+        address = address.strip()
+
+        if not address:
+            address = "6666 Stupidbitch Rd., Dumbville, JK 69420"
+
+    python:
+        phoneNum = renpy.input("Phone Number:", length=32)
+        phoneNum = phoneNum.strip()
+
+        if not phoneNum:
+            phoneNum = "(555) 666-6666"
+
+    python:
+        ssn = renpy.input("Social Security Number:", length=32)
+        ssn = phoneNum.strip()
+
+        if not ssn:
+            ssn = "123 45 6789"
+
+    a "Perfect! Are you ready for your avatar? Click on the following {a=https://renpy.org}link."
+
+    a "Did you follow the {a=https://renpy.org}link? You won't become the perfect you if you don't fill out the link!"
+
+    "THE END"
 
     # This ends the game.
 
