@@ -88,10 +88,44 @@ label start:
             $ renpy.movie_cutscene("images/puke.webm")
             a "Boringggg..."
         "Blonde":
-            a "Ok, conventional, period. Blondes got a 90% successful match rating on our apps, so you are in good hands."
+            a "Ok, conventional, period. Blondes got a 90\% successful match rating on our apps, so you are in good hands."
         "Gray":
             $ renpy.movie_cutscene("images/puke.webm")
             a "Wow, this a dating app, not a funeral."
+
+    menu:
+        "How about your eye color?"
+
+        "Black":
+            $ renpy.movie_cutscene("images/eva-asuka.webm")
+            a "Our data analytics show users with black eyes have a successful match rate of 1\%. Try harder."
+        "Brown":
+            $ renpy.movie_cutscene("images/eva-asuka.webm")
+            a "Our data analytics show users with brown eyes have a successful match rate of 3\%. Try harder."
+        "Green":
+            $ renpy.movie_cutscene("images/eva-eye.webm")
+            a "Our data analytics show users with green eyes have a successful match rate of 10\%. Try harder."
+        "Blue":
+            a "Our data analytics show users with blue eyes have a successful match rate of 99\%. Slay!"
+
+    menu:
+        "What is your race?"
+
+        "Hispanic or Latino":
+            a "Something"
+        "White":
+            a "Something"
+        "Black or African American":
+            $ renpy.movie_cutscene("images/chris-voodoo.webm")
+            a "Our data shows that Black or African Americans frequently report being fetishized on our apps. Try something else."
+        "Native Hawaiian or Other Pacific Islander":
+            $ renpy.movie_cutscene("images/moana-pee.webm")
+            a "Exotic..."
+        "Asian":
+            $ renpy.movie_cutscene("images/eeaao-snot.webm")
+            a "Oof, sorry, Asians have the lowest rate of matches."
+        "Two or More Races":
+            a "Something"
 
     menu:
         "What is your body type?"
@@ -148,7 +182,7 @@ label start:
                 jump size
             "25+":
                 a "Get the fuck outta here, hag!"
-                $ renpy.movie_cutscene("images/knives out - gag.webm")
+                $ renpy.movie_cutscene("images/knives out - puke.webm")
                 jump size
 
     label old:
@@ -159,7 +193,7 @@ label start:
                 a "Those daddy-issue twinks are gonna love you..."
                 jump size
             "< 50":
-                $ renpy.movie_cutscene("images/hippo.webm")
+                $ renpy.movie_cutscene("images/knives out - puke.webm")
                 jump size
 
     label size:
@@ -169,7 +203,7 @@ label start:
             "1 foot":
                 a "Get those size queens, daddy!"
             "< 1 foot":
-                $ renpy.movie_cutscene("images/knives out - puke.webm")
+                $ renpy.movie_cutscene("images/knives out - confession.webm")
                 a "Ooo, sorry, guess you're a bottom. Slay!"
     
     scene sakura_scary
@@ -219,9 +253,9 @@ label start:
         "Perfect! Are you ready for your avatar?"
 
         "Yes":
-            "That'll be $15, then. Please click on the following {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a} to complete your transaction."
+            a "That'll be $15, then. Please click on the following {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a} to complete your transaction."
         "No":
-            "That's too bad. That'll be $15 either way. Please click on the following {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a} to complete your transaction."
+            a "That's too bad. That'll be $15 either way. Please click on the following {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a} to complete your transaction."
 
     a "Did you follow the {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a}? You won't become the perfect you if you don't fill out the link!"
 
