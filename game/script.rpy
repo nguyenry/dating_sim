@@ -118,13 +118,13 @@ label start:
             a "Tough outta luck, bro. GG... You're cooked."
         "6 feet and over":
             play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
-            a "WOWOWOWOWOW come here, daddy ;)"
+            a "WOWOWOWOWOW!!! Come here, Daddy ;)"
 
     menu:
         "What is your race?"
 
         "Hispanic or Latino":
-            a "https://www.youtube.com/watch?v=QDj_MY-QwxM&ab_channel=RottenTomatoesTV"
+            $ renpy.movie_cutscene("images/tortuga.webm")
             a "We only offer English as our language interface."
         "White":
             play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
@@ -139,8 +139,47 @@ label start:
             $ renpy.movie_cutscene("images/eeaao-snot.webm")
             a "Oof, sorry, Asians have the lowest rate of matches."
         "Two or More Races":
-            a "https://www.youtube.com/watch?v=KldwP0sa_mQ&ab_channel=blackchad"
+            $ renpy.movie_cutscene("images/rock-sus.webm")
             a "It really depends on what you're mixed with, but let's not risk it."
+
+    menu:
+        "What is your gender?"
+
+        "Woman":
+            $ renpy.movie_cutscene("images/poison.webm")
+            a "What are you even doing here?"
+        "Man":
+            play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+            a "Perfect ;)"
+        "Transgender Man":
+            play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+            a "You're on a tightrope, though, bro."
+        "Transgender Woman":
+            $ renpy.movie_cutscene("images/knives out - gag.webm")
+            a "There's some space for you here. It depends on how you answer the rest of the questions. Would be more advantageous if you were a man, though."
+        "Non-binary/non-conforming":
+            $ renpy.movie_cutscene("images/knives out - gag.webm")
+            a "There's some space for you here. It depends on how you answer the rest of the questions. Would be more advantageous if you were a man, though."
+        "Prefer not to respond":
+            a "You actually thought that was an option? Try again, bitch."
+            menu:
+                "Pick one."
+
+                "Woman":
+                    $ renpy.movie_cutscene("images/poison.webm")
+                    a "What are you even doing here?"
+                "Man":
+                    play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+                    a "Perfect ;)"
+                "Transgender Man":
+                    play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+                    a "You're on a tightrope, though, bro."
+                "Transgender Woman":
+                    $ renpy.movie_cutscene("images/knives out - gag.webm")
+                    a "There's some space for you here. It depends on how you answer the rest of the questions. Would be more advantageous if you were a man, though."
+                "Non-binary/non-conforming":
+                    $ renpy.movie_cutscene("images/knives out - gag.webm")
+                    a "There's some space for you here. It depends on how you answer the rest of the questions. Would be more advantageous if you were a man, though."
 
     menu:
         "What is your body type?"
@@ -234,6 +273,7 @@ label start:
                 play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
                 a "Great! Our mainly American userbase are used to that!"
             "No":
+                $ renpy.movie_cutscene("images/banana.webm")
                 a "Ooooo, that's not good. Our mainly American userbase are not used to uncut men."
 
     scene sakura_scary
@@ -289,9 +329,9 @@ label start:
 
     a "Did you follow the {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a}? You won't become the perfect you if you don't fill out the link!"
 
-    $ renpy.movie_cutscene("images/ending.webm")
+    stop background fadeout 1.0
 
-    # plastic love?
+    $ renpy.movie_cutscene("images/ending_wsound.webm")
 
     # This ends the game.
 
