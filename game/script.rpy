@@ -88,6 +88,7 @@ label start:
             $ renpy.movie_cutscene("images/puke.webm")
             a "Boringggg..."
         "Blonde":
+            play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
             a "Ok, conventional, period. Blondes got a 90\% successful match rating on our apps, so you are in good hands."
         "Gray":
             $ renpy.movie_cutscene("images/puke.webm")
@@ -106,15 +107,28 @@ label start:
             $ renpy.movie_cutscene("images/eva-eye.webm")
             a "Our data analytics show users with green eyes have a successful match rate of 10\%. Try harder."
         "Blue":
+            play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
             a "Our data analytics show users with blue eyes have a successful match rate of 99\%. Slay!"
+
+    menu:
+        "How tall are you?"
+
+        "Under 6 feet":
+            "https://www.youtube.com/watch?v=kjS6bQ5OQ-o&ab_channel=EvisDaison"
+            a "Tough outta luck, bro. GG... You're cooked."
+        "6 feet and over":
+            play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+            a "WOWOWOWOWOW come here, daddy ;)"
 
     menu:
         "What is your race?"
 
         "Hispanic or Latino":
-            a "Something"
+            a "https://www.youtube.com/watch?v=QDj_MY-QwxM&ab_channel=RottenTomatoesTV"
+            a "We only offer English as our language interface."
         "White":
-            a "Something"
+            play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+            a "Congrats! You are privileged to all the matches on our app!!"
         "Black or African American":
             $ renpy.movie_cutscene("images/chris-voodoo.webm")
             a "Our data shows that Black or African Americans frequently report being fetishized on our apps. Try something else."
@@ -125,7 +139,8 @@ label start:
             $ renpy.movie_cutscene("images/eeaao-snot.webm")
             a "Oof, sorry, Asians have the lowest rate of matches."
         "Two or More Races":
-            a "Something"
+            a "https://www.youtube.com/watch?v=KldwP0sa_mQ&ab_channel=blackchad"
+            a "It really depends on what you're mixed with, but let's not risk it."
 
     menu:
         "What is your body type?"
@@ -146,6 +161,7 @@ label start:
             "How often do you shave?"
 
             "Daily":
+                play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
                 a "Okok, that's a good amount."
                 jump young
             "Weekly":
@@ -166,6 +182,7 @@ label start:
             "How hairy are you?"
 
             "Very":
+                play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
                 a "Perfect, the twinks are gonna love you."
                 jump old
             "Not really":
@@ -178,6 +195,7 @@ label start:
             "How old are you?"
 
             "18-24":
+                play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
                 a "Okok, legal, chill."
                 jump size
             "25+":
@@ -190,6 +208,7 @@ label start:
             "How old are you?"
 
             "50+":
+                play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
                 a "Those daddy-issue twinks are gonna love you..."
                 jump size
             "< 50":
@@ -200,12 +219,23 @@ label start:
         menu:
             "How big are you?"
 
-            "1 foot":
+            "12 inches and over":
+                play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
                 a "Get those size queens, daddy!"
-            "< 1 foot":
+            "Under 12 inches":
                 $ renpy.movie_cutscene("images/knives out - confession.webm")
                 a "Ooo, sorry, guess you're a bottom. Slay!"
     
+    label cut:
+        menu:
+            "Are you circumcised?"
+
+            "Yes":
+                play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+                a "Great! Our mainly American userbase are used to that!"
+            "No":
+                a "Ooooo, that's not good. Our mainly American userbase are not used to uncut men."
+
     scene sakura_scary
     with pixellate
     show char at center, size_normal
@@ -260,6 +290,8 @@ label start:
     a "Did you follow the {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a}? You won't become the perfect you if you don't fill out the link!"
 
     $ renpy.movie_cutscene("images/ending.webm")
+
+    # plastic love?
 
     # This ends the game.
 
