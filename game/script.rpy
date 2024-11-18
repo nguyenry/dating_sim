@@ -28,6 +28,7 @@ image char_select = "images/characters/character_select_screen.png"
 image main_menu_mov = Movie(play="gui/main_menu.webm")
 image sakura_mov = Movie(play="images/sakura_short.webm")
 image sakura_scary = Movie(play="images/sakura_scary.webm")
+image quote = Movie(play="")
 
 # Audio
 
@@ -39,12 +40,9 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    # scene main_menu_mov
-    # with fade
+    $ renpy.movie_cutscene("images/ai_quote_wsound.webm")
 
-    # "\"AI is something that is kind of present in your profile always and makes suggestions to you.\" - CEO of Grindr"
-
-    # call screen contact_info
+    play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
 
     init python:
         renpy.music.register_channel("background", "music")
@@ -65,7 +63,7 @@ label start:
         image char = "images/[choosed_char].png"
         show char at center, size_normal
 
-    a "Welcome to My Romance Academia!"
+    a "Welcome to My Romance Academia!{w=1.0} Click anywhere to continue."
 
     a "I will be your AI assistant as we curate your profile to maximize your chances on the dating scene!"
 
@@ -83,19 +81,16 @@ label start:
         "What is your hair color?"
 
         "Black":
-            jump puke
+            $ renpy.movie_cutscene("images/puke.webm")
+            a "Ew, what are we? A 2000's emo goth baddie?"
         "Brown":
-            jump puke
+            $ renpy.movie_cutscene("images/puke.webm")
+            a "Boringggg..."
         "Blonde":
-            jump puke
+            a "Ok, conventional, period. Blondes got a 90% successful match rating on our apps, so you are in good hands."
         "Gray":
-            jump puke
-
-    label puke:
-        $ renpy.movie_cutscene("images/puke.webm")
-
-    a "Cue some explanation of why that is bad."
-
+            $ renpy.movie_cutscene("images/puke.webm")
+            a "Wow, this a dating app, not a funeral."
 
     menu:
         "What is your body type?"
@@ -119,13 +114,16 @@ label start:
                 a "Okok, that's a good amount."
                 jump young
             "Weekly":
-                a "Ew, what the fuck is there shit stringing on your ass hairs?"
+                $ renpy.movie_cutscene("images/puke.webm")
+                a "Ew, what the fuck? Is there shit stringing along your ass hairs?"
                 jump young
             "Monthly":
                 $ renpy.movie_cutscene("images/puke.webm")
+                a "Ew, what the fuck? Is there shit stringing along your ass hairs?"
                 jump young
             "Never":
                 $ renpy.movie_cutscene("images/puke.webm")
+                a "Ew, am I supposed to braid your shit-stained ass hairs?"
                 jump young
     
     label hairy:
@@ -157,7 +155,7 @@ label start:
             "How old are you?"
 
             "50+":
-                a "Those daddy issue twinks are gonna love you..."
+                a "Those daddy-issue twinks are gonna love you..."
                 jump size
             "< 50":
                 $ renpy.movie_cutscene("images/puke.webm")

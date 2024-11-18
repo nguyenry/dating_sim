@@ -228,6 +228,7 @@ style input_prompt:
 style input:
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
+    color "#f776b7"
 
     # xpos gui.name_xpos - 200
     # xanchor gui.name_xalign
@@ -347,38 +348,38 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start() activate_sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
+            textbutton _("Start") action Start() activate_sound "audio/bubble click.ogg"
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("History") action ShowMenu("history") activate_sound "audio/bubble click.ogg"
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Save") action ShowMenu("save") activate_sound "audio/bubble click.ogg"
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Load") action ShowMenu("load") activate_sound "audio/bubble click.ogg"
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferences") action ShowMenu("preferences") activate_sound "audio/bubble click.ogg"
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("End Replay") action EndReplay(confirm=True) activate_sound "audio/bubble click.ogg"
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Main Menu") action MainMenu() activate_sound "audio/bubble click.ogg"
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("About") action ShowMenu("about") activate_sound "audio/bubble click.ogg"
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            textbutton _("Help") action ShowMenu("help") activate_sound "audio/bubble click.ogg"
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quit") action Quit(confirm=not main_menu) activate_sound "audio/bubble click.ogg"
 
 
 style navigation_button is gui_button
