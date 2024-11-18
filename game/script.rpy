@@ -114,7 +114,7 @@ label start:
         "How tall are you?"
 
         "Under 6 feet":
-            "https://www.youtube.com/watch?v=kjS6bQ5OQ-o&ab_channel=EvisDaison"
+            $ renpy.movie_cutscene("images/ongo gablogian.webm")
             a "Tough outta luck, bro. GG... You're cooked."
         "6 feet and over":
             play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
@@ -252,6 +252,7 @@ label start:
                 jump size
             "< 50":
                 $ renpy.movie_cutscene("images/knives out - puke.webm")
+                a "How are you gonna attract those twinks with daddy issues?"
                 jump size
 
     label size:
@@ -271,10 +272,10 @@ label start:
 
             "Yes":
                 play sound "audio/anime-wow-sound-effect_3sfDUWt.ogg"
-                a "Great! Our mainly American userbase are used to that!"
+                a "Great! Our mainly American userbase is used to that!"
             "No":
                 $ renpy.movie_cutscene("images/banana.webm")
-                a "Ooooo, that's not good. Our mainly American userbase are not used to uncut men."
+                a "Ooooo, that's not good. Our mainly American userbase is not used to uncut men."
 
     scene sakura_scary
     with pixellate
