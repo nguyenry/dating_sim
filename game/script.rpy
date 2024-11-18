@@ -60,6 +60,7 @@ label start:
         scene classroom
         with fade
 
+        play sound "audio/japanese school bell sound.ogg"
         image char = "images/[choosed_char].png"
         show char at center, size_normal
 
@@ -114,15 +115,15 @@ label start:
                 a "Okok, that's a good amount."
                 jump young
             "Weekly":
-                $ renpy.movie_cutscene("images/puke.webm")
+                $ renpy.movie_cutscene("images/katy perry - roar.webm")
                 a "Ew, what the fuck? Is there shit stringing along your ass hairs?"
                 jump young
             "Monthly":
-                $ renpy.movie_cutscene("images/puke.webm")
+                $ renpy.movie_cutscene("images/katy perry - roar.webm")
                 a "Ew, what the fuck? Is there shit stringing along your ass hairs?"
                 jump young
             "Never":
-                $ renpy.movie_cutscene("images/puke.webm")
+                $ renpy.movie_cutscene("images/bart baker - 22.webm")
                 a "Ew, am I supposed to braid your shit-stained ass hairs?"
                 jump young
     
@@ -135,7 +136,7 @@ label start:
                 jump old
             "Not really":
                 a "Oof, you're just a fem twink bottom bitch, then."
-                $ renpy.movie_cutscene("images/puke.webm")
+                $ renpy.movie_cutscene("images/knives out - gag.webm")
                 jump old
 
     label young:
@@ -147,7 +148,7 @@ label start:
                 jump size
             "25+":
                 a "Get the fuck outta here, hag!"
-                $ renpy.movie_cutscene("images/puke.webm")
+                $ renpy.movie_cutscene("images/knives out - gag.webm")
                 jump size
 
     label old:
@@ -158,7 +159,7 @@ label start:
                 a "Those daddy-issue twinks are gonna love you..."
                 jump size
             "< 50":
-                $ renpy.movie_cutscene("images/puke.webm")
+                $ renpy.movie_cutscene("images/hippo.webm")
                 jump size
 
     label size:
@@ -168,6 +169,7 @@ label start:
             "1 foot":
                 a "Get those size queens, daddy!"
             "< 1 foot":
+                $ renpy.movie_cutscene("images/knives out - puke.webm")
                 a "Ooo, sorry, guess you're a bottom. Slay!"
     
     scene sakura_scary
@@ -213,11 +215,17 @@ label start:
         if not ssn:
             ssn = "123 45 6789"
 
-    a "Perfect! Are you ready for your avatar? Click on the following {a=https://renpy.org}link."
+    menu:
+        "Perfect! Are you ready for your avatar?"
 
-    a "Did you follow the {a=https://renpy.org}link? You won't become the perfect you if you don't fill out the link!"
+        "Yes":
+            "That'll be $15, then. Please click on the following {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a} to complete your transaction."
+        "No":
+            "That's too bad. That'll be $15 either way. Please click on the following {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a} to complete your transaction."
 
-    "THE END"
+    a "Did you follow the {a=https://forms.gle/PGtNg7xcqv5uNH4SA}link{/a}? You won't become the perfect you if you don't fill out the link!"
+
+    $ renpy.movie_cutscene("images/ending.webm")
 
     # This ends the game.
 

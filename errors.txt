@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 40: keyword argument 'xpos' is incompatible with 'xalign'.
-    xpos 150
-        ^
+File "game/script.rpy", line 216: Menu does not contain any choices.
+    menu:
+         ^
 
-Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Nov 11 00:37:56 2024
+Ren'Py Version: Ren'Py 8.3.3.24111502
+Sun Nov 17 17:41:14 2024
