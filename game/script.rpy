@@ -30,8 +30,6 @@ image sakura_mov = Movie(play="images/sakura_short.webm")
 image sakura_scary = Movie(play="images/sakura_scary.webm")
 image quote = Movie(play="")
 
-# Audio
-
 # The game starts here.
 
 label start:
